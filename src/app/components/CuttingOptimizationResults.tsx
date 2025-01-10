@@ -61,14 +61,20 @@ const CuttingOptimizationResults = () => {
 
             // Optimizasyon verilerini hazırla
             let remainingPieces = piecesData.map(p => ({
+                // @ts-expect-error Excel data type conversion
                 length: p.Length,
+                // @ts-expect-error Excel data type conversion
                 quantity: p.Quantity,
+                // @ts-expect-error Excel data type conversion
                 remaining: p.Quantity
             }));
 
             let stockProfiles = stockData.map(s => ({
+                // @ts-expect-error Excel data type conversion
                 length: s.Length,
+                // @ts-expect-error Excel data type conversion
                 quantity: s.Quantity,
+                // @ts-expect-error Excel data type conversion
                 remaining: s.Quantity
             }));
 

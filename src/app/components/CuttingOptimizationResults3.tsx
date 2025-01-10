@@ -35,6 +35,7 @@ const CuttingOptimizationResults = () => {
                 return new Promise((resolve, reject) => {
                     const reader = new FileReader();
                     reader.onload = (e) => {
+                        // @ts-expect-error Excel data type conversion
                         const data = new Uint8Array(e.target.result);
                         resolve(data);
                     };
@@ -55,15 +56,22 @@ const CuttingOptimizationResults = () => {
             const piecesData = XLSX.utils.sheet_to_json(piecesSheet);
             const stockData = XLSX.utils.sheet_to_json(stockSheet);
     
+            
             let remainingPieces = piecesData.map(p => ({
+                // @ts-expect-error Excel data type conversion
                 length: p.Length,
+                // @ts-expect-error Excel data type conversion
                 quantity: p.Quantity,
+                // @ts-expect-error Excel data type conversion
                 remaining: p.Quantity
             }));
     
             let stockProfiles = stockData.map(s => ({
+                // @ts-expect-error Excel data type conversion
                 length: s.Length,
+                // @ts-expect-error Excel data type conversion
                 quantity: s.Quantity,
+                // @ts-expect-error Excel data type conversion
                 remaining: s.Quantity
             }));
     
