@@ -106,6 +106,7 @@ const CuttingStockOptimizer = () => {
   };
 
   return (
+    <div className="flex justify-center">
     <Card className="w-full max-w-4xl">
       <CardContent className="p-6">
         <div className="space-y-6">
@@ -240,6 +241,7 @@ const CuttingStockOptimizer = () => {
         </div>
       </CardContent>
     </Card>
+    </div>
   );
 };
 
